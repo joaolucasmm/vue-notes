@@ -1,24 +1,5 @@
 <script setup lang="ts">
-type Note = {
-  id: string
-  title: string
-  subtitle: string
-  content: string
-  date: number
-}
-
-class NoteController {
-  objects: Note[] = []
-
-  create(title: string, subtitle: string, content: string) {
-    const date = Date.now()
-    this.objects.push({ id: 'id' + date, title, subtitle, content, date: date })
-  }
-
-  view() {
-    return this.objects
-  }
-}
+import NoteController from '@/stores/noteManager'
 
 const noteController = new NoteController()
 noteController.create('Titulo', 'Subtítulo', 'Conteúdo')
