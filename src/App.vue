@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
 import InputNote from './components/InputNote.vue';
 import NoteBlock from './components/NoteBlock.vue';
+import './mock/handlerMock.ts';
 </script>
 
 <template>
