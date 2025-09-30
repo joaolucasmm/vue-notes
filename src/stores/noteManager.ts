@@ -5,20 +5,29 @@ type Note = {
     title: string;
     subtitle: string;
     content: string;
-    date: number;
+    createdAt: string;
 };
 
 class NoteController {
     objects: Ref<Note[]> = ref([]);
 
     create(title: string, subtitle: string, content: string) {
-        const date = Date.now();
+        const now = new Date();
+        const time = now.toLocaleTimeString('pt-BR', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+        });
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const year = now.getFullYear();
+        const date = `${day}/${month}/${year} - ${time}`;
         this.objects.value.push({
             id: 'id' + date + Math.random().toString(16).slice(2),
             title,
             subtitle,
             content,
-            date: date,
+            createdAt: date,
         });
     }
 
