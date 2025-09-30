@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+import InputNote from './components/InputNote.vue'
 import NoteBlock from './components/NoteBlock.vue'
 </script>
 
@@ -14,6 +15,7 @@ import NoteBlock from './components/NoteBlock.vue'
 
   <main>
     <NoteBlock />
+    <InputNote />
   </main>
 </template>
 
